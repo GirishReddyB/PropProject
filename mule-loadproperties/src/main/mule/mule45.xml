@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	
+	<flow name="mule45Flow" doc:id="4f88c703-53b4-417e-b6fa-77f24a37bd11" >
+		<http:listener doc:name="Listener" doc:id="f7a82d85-5395-4506-b74b-ee8977a7a95e" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="277801b0-7f7f-4445-a82a-cff19461386a" message="Check 1  #[app.registry.get('dbProperties').properties['db.host.local']]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="277801b0-7f7f-4445-a82a-cff19461386a" message="loggging #[app.registry.get('dbProperties').properties['db.host.local']]"/>
+	</flow>
+</mule>
